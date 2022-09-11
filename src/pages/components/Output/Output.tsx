@@ -1,17 +1,13 @@
-import { Tabs, Select, Space, Row, Col, Typography, Table } from "antd";
+import { Space, Row, Col, Typography, Table } from "antd";
 import React from "react";
 import { FormValue } from "../DTO/FromValueDTO";
 import { TableDataType } from "../DTO/TableDTO";
 import type { ColumnsType } from "antd/es/table";
 import { Column } from "@ant-design/plots";
 import LabelValue from "../../../components/LabelValue";
+import { checkNgetCsv } from "../../../utils/helperFunctions";
 
-const { Option } = Select;
 const { Title } = Typography;
-const { TabPane } = Tabs;
-const onChange = (key: string) => {
-  console.log(key);
-};
 
 interface Props {
   formValue: FormValue;
@@ -32,21 +28,9 @@ const columns: ColumnsType<TableDataType> = [
 
 const Output: React.FC<Props> = ({ formValue }) => {
   // table and graph data prep
-  const productsWithPriceList = formValue.manualCSV.split("\r\n");
-  const productList: any[] = productsWithPriceList
-    .map((product, index) => {
-      if (index != 0) {
-        const productName = product.split(",")[0];
-        const productPrice = parseFloat(product.split(",")[1]);
-        return {
-          key: index.toString(),
-          product: productName,
-          price: productPrice,
-        };
-      }
-    })
-    .filter((item) => item);
+  const productList: any[] = checkNgetCsv(formValue.manualCSV).productList;
 
+  //  garph config
   const config: any = {
     data: productList,
     xField: "product",
@@ -71,7 +55,6 @@ const Output: React.FC<Props> = ({ formValue }) => {
       end: 0.2,
     },
   };
-  //  garph config
   return (
     <>
       <Title level={5}>Personal Information</Title>

@@ -1,4 +1,4 @@
-import { Tabs } from "antd";
+import { Tabs, message } from "antd";
 import InputForm from "./components/InputForm/InputForm";
 import React, { useState } from "react";
 import Output from "./components/Output/Output";
@@ -20,11 +20,14 @@ const MainLayout: React.FC = () => {
   const changeTab = (Key: string) => setActiveKey(Key);
 
   const onFormSubmit = (values: FormValue) => {
-    console.log(values);
     setOutput(values);
     changeTab("2");
   };
   const onChange = (key: string) => {
+    if (!output.name.length) {
+      message.error("No output to show, Please Fill up this form First");
+      return;
+    }
     changeTab(key);
   };
 
@@ -37,11 +40,9 @@ const MainLayout: React.FC = () => {
       type="card"
     >
       <TabPane tab="Input" key="1">
-        {/* input form  */}
         <InputForm onFinish={onFormSubmit} />
       </TabPane>
       <TabPane tab="Output" key="2">
-        {/* Output */}
         <Output formValue={output} />
       </TabPane>
     </Tabs>
