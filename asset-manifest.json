@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/fornt-end/static/css/main.4eac23d3.css",
-    "main.js": "/fornt-end/static/js/main.6cdf8208.js",
-    "static/js/787.c5269b6c.chunk.js": "/fornt-end/static/js/787.c5269b6c.chunk.js",
-    "index.html": "/fornt-end/index.html",
-    "main.4eac23d3.css.map": "/fornt-end/static/css/main.4eac23d3.css.map",
-    "main.6cdf8208.js.map": "/fornt-end/static/js/main.6cdf8208.js.map",
-    "787.c5269b6c.chunk.js.map": "/fornt-end/static/js/787.c5269b6c.chunk.js.map"
+    "main.css": "/fornt-end-v1/static/css/main.4eac23d3.css",
+    "main.js": "/fornt-end-v1/static/js/main.1cfadaab.js",
+    "static/js/787.c5269b6c.chunk.js": "/fornt-end-v1/static/js/787.c5269b6c.chunk.js",
+    "index.html": "/fornt-end-v1/index.html",
+    "main.4eac23d3.css.map": "/fornt-end-v1/static/css/main.4eac23d3.css.map",
+    "main.1cfadaab.js.map": "/fornt-end-v1/static/js/main.1cfadaab.js.map",
+    "787.c5269b6c.chunk.js.map": "/fornt-end-v1/static/js/787.c5269b6c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4eac23d3.css",
-    "static/js/main.6cdf8208.js"
+    "static/js/main.1cfadaab.js"
   ]
 }
